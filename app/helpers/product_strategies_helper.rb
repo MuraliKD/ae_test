@@ -1,0 +1,2 @@
+module ProductStrategiesHelper
+end

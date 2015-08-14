@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Feature list:</strong>
+  <%= @product_strategy.feature_list %>
+</p>
+
+<p>
+  <strong>Product principles:</strong>
+  <%= @product_strategy.product_principles %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @product_strategy.user %>
+</p>
+
+<%= link_to 'Edit', edit_product_strategy_path(@product_strategy) %> |
+<%= link_to 'Back', product_strategies_path %>

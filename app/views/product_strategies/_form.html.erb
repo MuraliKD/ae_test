@@ -1,0 +1,13 @@
+<%= simple_form_for(@product_strategy) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :feature_list %>
+    <%= f.input :product_principles %>
+    <%= f.association :user %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

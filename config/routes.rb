@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :product_strategies
+
   resources :gtm_strategies
 
   resources :milestones
