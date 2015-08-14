@@ -29,6 +29,7 @@ class ProductStrategiesController < ApplicationController
   # POST /product_strategies.json
   def create
     @product_strategy = ProductStrategy.new(product_strategy_params)
+    @product_strategy.user = current_user
 
     respond_to do |format|
       if @product_strategy.save
