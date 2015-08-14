@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'consults/index'
+
   resources :business_strategies
 
   resources :product_strategies
