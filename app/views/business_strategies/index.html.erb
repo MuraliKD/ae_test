@@ -1,0 +1,37 @@
+<h1>Listing business_strategies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vision</th>
+      <th>Principles</th>
+      <th>Business model</th>
+      <th>Form factor</th>
+      <th>Pricing</th>
+      <th>Sales</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @business_strategies.each do |business_strategy| %>
+      <tr>
+        <td><%= business_strategy.vision %></td>
+        <td><%= business_strategy.principles %></td>
+        <td><%= business_strategy.business_model %></td>
+        <td><%= business_strategy.form_factor %></td>
+        <td><%= business_strategy.pricing %></td>
+        <td><%= business_strategy.sales %></td>
+        <td><%= business_strategy.user %></td>
+        <td><%= link_to 'Show', business_strategy %></td>
+        <td><%= link_to 'Edit', edit_business_strategy_path(business_strategy) %></td>
+        <td><%= link_to 'Destroy', business_strategy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Business strategy', new_business_strategy_path %>

@@ -1,0 +1,2 @@
+module BusinessStrategiesHelper
+end
