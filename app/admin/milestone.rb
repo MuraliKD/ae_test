@@ -1,4 +1,5 @@
 ActiveAdmin.register Milestone do
+  permit_params :summary, :description, :title
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
