@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :gtm_strategies
+
   resources :milestones
 
   resources :market_segmentations
