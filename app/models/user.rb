@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
         :recoverable, :rememberable, :trackable, :validatable
   has_one :business_strategy
   has_one :product_strategy
+  has_one :gtm_strategy
 end
