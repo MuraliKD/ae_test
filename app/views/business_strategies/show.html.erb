@@ -1,39 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = BusinessStrategy -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => BusinessStrategy %></h1>
+</div>
 
-<p>
-  <strong>Vision:</strong>
-  <%= @business_strategy.vision %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:vision) %></dt>
+      <dd><pre class="prettyprint"><%= @business_strategy.vision %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:principles) %></dt>
+      <dd><pre class="prettyprint"><%= @business_strategy.principles %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:business_model) %></dt>
+      <dd><pre class="prettyprint"><%= @business_strategy.business_model %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:form_factor) %></dt>
+      <dd><pre class="prettyprint"><%= @business_strategy.form_factor %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:pricing) %></dt>
+      <dd><pre class="prettyprint"><%= @business_strategy.pricing %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:sales) %></dt>
+      <dd><pre class="prettyprint"><%= @business_strategy.sales %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Principles:</strong>
-  <%= @business_strategy.principles %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              business_strategies_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_business_strategy_path(@business_strategy), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              business_strategy_path(@business_strategy),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Business model:</strong>
-  <%= @business_strategy.business_model %>
-</p>
-
-<p>
-  <strong>Form factor:</strong>
-  <%= @business_strategy.form_factor %>
-</p>
-
-<p>
-  <strong>Pricing:</strong>
-  <%= @business_strategy.pricing %>
-</p>
-
-<p>
-  <strong>Sales:</strong>
-  <%= @business_strategy.sales %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @business_strategy.user %>
-</p>
-
-<%= link_to 'Edit', edit_business_strategy_path(@business_strategy) %> |
-<%= link_to 'Back', business_strategies_path %>

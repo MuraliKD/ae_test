@@ -1,17 +1,46 @@
-<%= simple_form_for(@business_strategy) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :vision %>
-    <%= f.input :principles %>
-    <%= f.input :business_model %>
-    <%= f.input :form_factor %>
-    <%= f.input :pricing %>
-    <%= f.input :sales %>
-    <%= f.association :user %>
+<%= form_for @business_strategy, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :vision, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :vision, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :principles, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :principles, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :business_model, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :business_model, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :form_factor, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :form_factor, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :pricing, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :pricing, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :sales, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :sales, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  business_strategies_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
