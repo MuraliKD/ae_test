@@ -1,4 +1,5 @@
 ActiveAdmin.register AcquisitionTrack do
+  permit_params :user, :customer, :user_activity, :customer_activity, :plan_title, :date_scheduled
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
