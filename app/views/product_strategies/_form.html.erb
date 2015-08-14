@@ -1,13 +1,22 @@
-<%= simple_form_for(@product_strategy) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :feature_list %>
-    <%= f.input :product_principles %>
-    <%= f.association :user %>
+<%= form_for @product_strategy, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :feature_list, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :feature_list, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :product_principles, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :product_principles, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  product_strategies_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
