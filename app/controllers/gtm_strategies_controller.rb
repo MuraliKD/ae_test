@@ -29,6 +29,7 @@ class GtmStrategiesController < ApplicationController
   # POST /gtm_strategies.json
   def create
     @gtm_strategy = GtmStrategy.new(gtm_strategy_params)
+    @gtm_strategy.user = current_user
 
     respond_to do |format|
       if @gtm_strategy.save
