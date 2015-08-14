@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :milestones
+
   resources :market_segmentations
 
   resources :acquisition_tracks
