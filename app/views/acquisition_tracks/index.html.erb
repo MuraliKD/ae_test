@@ -1,0 +1,37 @@
+<h1>Listing acquisition_tracks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Customer</th>
+      <th>Market segmentation</th>
+      <th>User activity</th>
+      <th>Customer activity</th>
+      <th>Plan title</th>
+      <th>Date scheduled</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @acquisition_tracks.each do |acquisition_track| %>
+      <tr>
+        <td><%= acquisition_track.user %></td>
+        <td><%= acquisition_track.customer %></td>
+        <td><%= acquisition_track.market_segmentation %></td>
+        <td><%= acquisition_track.user_activity %></td>
+        <td><%= acquisition_track.customer_activity %></td>
+        <td><%= acquisition_track.plan_title %></td>
+        <td><%= acquisition_track.date_scheduled %></td>
+        <td><%= link_to 'Show', acquisition_track %></td>
+        <td><%= link_to 'Edit', edit_acquisition_track_path(acquisition_track) %></td>
+        <td><%= link_to 'Destroy', acquisition_track, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Acquisition track', new_acquisition_track_path %>

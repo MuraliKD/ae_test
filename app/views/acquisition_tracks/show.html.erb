@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @acquisition_track.user %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @acquisition_track.customer %>
+</p>
+
+<p>
+  <strong>Market segmentation:</strong>
+  <%= @acquisition_track.market_segmentation %>
+</p>
+
+<p>
+  <strong>User activity:</strong>
+  <%= @acquisition_track.user_activity %>
+</p>
+
+<p>
+  <strong>Customer activity:</strong>
+  <%= @acquisition_track.customer_activity %>
+</p>
+
+<p>
+  <strong>Plan title:</strong>
+  <%= @acquisition_track.plan_title %>
+</p>
+
+<p>
+  <strong>Date scheduled:</strong>
+  <%= @acquisition_track.date_scheduled %>
+</p>
+
+<%= link_to 'Edit', edit_acquisition_track_path(@acquisition_track) %> |
+<%= link_to 'Back', acquisition_tracks_path %>

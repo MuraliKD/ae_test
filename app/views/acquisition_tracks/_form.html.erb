@@ -1,0 +1,17 @@
+<%= simple_form_for(@acquisition_track) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :user %>
+    <%= f.input :customer %>
+    <%= f.association :market_segmentation %>
+    <%= f.input :user_activity %>
+    <%= f.input :customer_activity %>
+    <%= f.input :plan_title %>
+    <%= f.input :date_scheduled %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
