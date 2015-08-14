@@ -1,37 +1,46 @@
-<h1>Listing acquisition_tracks</h1>
-
-<table>
+<%- model_class = AcquisitionTrack -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => AcquisitionTrack %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Customer</th>
-      <th>Market segmentation</th>
-      <th>User activity</th>
-      <th>Customer activity</th>
-      <th>Plan title</th>
-      <th>Date scheduled</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:user) %></th>
+      <th><%= model_class.human_attribute_name(:customer) %></th>
+      <th><%= model_class.human_attribute_name(:user_activity) %></th>
+      <th><%= model_class.human_attribute_name(:customer_activity) %></th>
+      <th><%= model_class.human_attribute_name(:plan_title) %></th>
+      <th><%= model_class.human_attribute_name(:date_scheduled) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @acquisition_tracks.each do |acquisition_track| %>
       <tr>
+        <td><%= acquisition_track.id %></td>
         <td><%= acquisition_track.user %></td>
         <td><%= acquisition_track.customer %></td>
-        <td><%= acquisition_track.market_segmentation %></td>
         <td><%= acquisition_track.user_activity %></td>
         <td><%= acquisition_track.customer_activity %></td>
         <td><%= acquisition_track.plan_title %></td>
         <td><%= acquisition_track.date_scheduled %></td>
-        <td><%= link_to 'Show', acquisition_track %></td>
-        <td><%= link_to 'Edit', edit_acquisition_track_path(acquisition_track) %></td>
-        <td><%= link_to 'Destroy', acquisition_track, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l acquisition_track.created_at, format: :long %></td>
+        <td>
+          <%= link_to acquisition_track_path(acquisition_track), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to acquisition_track_path(acquisition_track), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Acquisition track', new_acquisition_track_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_acquisition_track_path,
+            :class => 'btn btn-primary' %>

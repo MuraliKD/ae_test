@@ -1,6 +1,5 @@
-<h1>Editing acquisition_track</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @acquisition_track %> |
-<%= link_to 'Back', acquisition_tracks_path %>
+<%- model_class = AcquisitionTrack -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => AcquisitionTrack %></h1>
+</div>
+<%= render :partial => 'form' %>
