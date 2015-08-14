@@ -1,25 +1,34 @@
-<h1>Listing gtm_strategies</h1>
-
-<table>
+<%- model_class = GTMStrategy -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => GTMStrategy %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @gtm_strategies.each do |gtm_strategy| %>
       <tr>
-        <td><%= gtm_strategy.user %></td>
-        <td><%= link_to 'Show', gtm_strategy %></td>
-        <td><%= link_to 'Edit', edit_gtm_strategy_path(gtm_strategy) %></td>
-        <td><%= link_to 'Destroy', gtm_strategy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= gtm_strategy.id %></td>
+        <td><%=l gtm_strategy.created_at, format: :long %></td>
+        <td>
+          <%= link_to gtm_strategy_path(gtm_strategy), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to gtm_strategy_path(gtm_strategy), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Gtm strategy', new_gtm_strategy_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_gtm_strategy_path,
+            :class => 'btn btn-primary' %>
