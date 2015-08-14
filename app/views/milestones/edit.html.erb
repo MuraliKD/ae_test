@@ -1,6 +1,5 @@
-<h1>Editing milestone</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @milestone %> |
-<%= link_to 'Back', milestones_path %>
+<%- model_class = Milestone -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Milestone %></h1>
+</div>
+<%= render :partial => 'form' %>
