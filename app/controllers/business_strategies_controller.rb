@@ -29,6 +29,7 @@ class BusinessStrategiesController < ApplicationController
   # POST /business_strategies.json
   def create
     @business_strategy = BusinessStrategy.new(business_strategy_params)
+    @business_strategy.user = current_user
 
     respond_to do |format|
       if @business_strategy.save
